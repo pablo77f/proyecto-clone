@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>LINES - Laboratorio de Ingenieria en Sistemas</title>
@@ -66,8 +61,10 @@
 						<li><a href="#two">Staff</a></li>
 						<li><a href="#historia">História</a></li>
 						<li><a href="#three">Proyectos</a></li>
+						<li><a href="#servicios">Formularios</a></li>
 						<li><a href="#videos">Videos</a></li>
 						<li><a href="#four">Contactanos</a></li>
+
 					</ul>
 				</nav>
 				<footer>
@@ -218,7 +215,43 @@
 									</div>
 
 							</section>
+							<section id="servicios">
+								<div class="container">
+									<h3>Formularios</h3>
+									<blockquote>
+										Para enviar un formulario, primero debe descargarlo don alguno de los links que estan en "Solicitudes", debajo de este parrafo.<br>
+										Luego debe completarlo, escanearlo o sacarle una foto nitida, y subirlo al sistema con el formulario, al lado de las solicitudes.
 
+									</blockquote>
+									<div class="row uniform">
+										<div class="6u 12u(xsmall)">
+											<h5>Solicitudes</h5>
+											<ul>
+												<li><a href='{{ url('/') }}/forms/puertos.pdf'>Acceso a puertos</a></li>
+												<li><a href='{{ url('/') }}/forms/email_alumno.pdf'>Email de Alumno</a></li>
+												<li><a href='{{ url('/') }}/forms/email_docente.pdf'>Email de Docente</a></li>
+												<li><a href='{{ url('/') }}/forms/moodle.pdf'>Espacio en Moodle</a></li>
+												<li><a href='{{ url('/') }}/forms/web_catedras.pdf'>Pagina Web para Catedras</a></li>
+												<li><a href='{{ url('/') }}/forms/web_predefinida.pdf'>Pagina Web Predefinida para Catedras</a></li>
+											</ul>
+										</div>
+										<form class="6u 12u(xsmall)" action="{{ url('/') }}/form" method="POST" enctype="multipart/form-data">
+											{!! csrf_field() !!}
+												<div class="row uniform">
+													<div class="12u">
+														<textarea name="message" id="message" placeholder="Mensaje" rows="3"></textarea>
+													</div>
+													<div class="12u">
+														<input type="file" name="foto" id="foto"/>
+													</div>
+													<div class="12u">
+															<input type="submit" class="button special small" value="Enviar Formulario" />
+													</div>
+												</div>
+										</form>
+									</div>
+								</div>
+							</section>
 							<section id="videos">
 								<div class="container">
 									<h3>Videos</h3>

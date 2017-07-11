@@ -15,6 +15,7 @@ use App\Http\Controllers;
 
 Route::get('/', 'PageController@index');
 Route::get('/mail', 'PageController@mail');
+Route::post('/form', 'PageController@form');
 
 Route::get('/admin', function () {
     return view('layout_admin');

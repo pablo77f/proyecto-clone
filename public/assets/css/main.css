@@ -2554,7 +2554,7 @@
 			}
 
 				#header > nav ul li {
-					border-top: solid 2px #5ccfb0;
+					border-top: solid 2px #1e88e5;
 					display: block;
 					padding: 0;
 				}
@@ -2567,7 +2567,7 @@
 						border: 0;
 						color: #ffffff !important;
 						display: block;
-						padding: 0.85em 0;
+						padding: 0.6em 0;
 						text-decoration: none;
 					}
 
