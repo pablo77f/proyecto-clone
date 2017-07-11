@@ -1,0 +1,10 @@
+Bifano&Card_Valid=0&SY=2009&SM=2&SD=21&sy_h=8&sy_m=36&EY=2009&EM=2&ED=21&sy_h=8&sy_m=36&Activate=1&UCache-control: max-age=86400
+Server: build-in http server
+Content-Type: text/html
+Connection: close
+
+<HTML><HEAD><TITLE>505 HTTP Version Not Supported</title></head>
+<script>alert("505 HTTP Version Not Supported => Version Not Supported! Only 1.0 & 1.1!");history.back();</script>Version Not Supported! Only 1.0 & 1.1!
+<br><br><a href="history.back()">BACK</a>
+<br><ADDRESS><A HREF="http://www.chiyu-t.com.tw/" target=_blank>build-in http server</A></ADDRESS>
+</BODY></HTML>
