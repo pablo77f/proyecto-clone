@@ -25,6 +25,8 @@ Route::get('/phpinfo', function () {
     return phpinfo();
 })->middleware('auth');
 
+Route::get('staff/{id_persona}', 'StaffController@show')->where('id_persona','[0-9]+');
+
 Route::get('admin/staff', 'StaffController@index')->middleware('auth');
 Route::post('admin/staff', 'StaffController@store')->middleware('auth');
 Route::post('admin/staff/{id_persona}', 'StaffController@store')->where('id_persona','[0-9]+')->middleware('auth');

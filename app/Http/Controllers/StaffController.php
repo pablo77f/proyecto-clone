@@ -9,10 +9,6 @@ use Illuminate\Http\UploadedFile;
 use App;
 class StaffController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function index() {
       $staff = App\Staff::paginate();
@@ -24,6 +20,10 @@ class StaffController extends Controller
     public function edit($id_persona) {
       $persona = App\Staff::find($id_persona);
       return view('staff/edit',compact('persona'));
+    }
+    public function show($id_persona) {
+      $persona = App\Staff::find($id_persona);
+      return $persona;
     }
     public function delete($id_persona) {
       App\Staff::destroy($id_persona);

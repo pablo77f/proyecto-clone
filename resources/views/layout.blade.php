@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/modal.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         <!-- Chrome, Firefox OS y Opera -->
     <meta name="theme-color" content="#222"/>
@@ -43,7 +44,36 @@
 		</style>
 	</head>
 	<body>
+		<div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close_modal">&times;</span>
+          <h3 style="margin-bottom: 0px;" id="persona_nombre">Lautaro Bifano</h3>
+        </div>
+        <div class="modal-body">
+					<div class="row">
+						<div class="3u">
+							<img id="persona_imagen" src="http://localhost:8000/images/staff/Lautaro_Bifano.png" height="200px">
+						</div>
+						<div class="9u">
+							<div class="row">
+								<div class="12u">
+									mail: <font id="persona_mail">paospdomamasd@dkfnaspomsa</font>
+								</div>
+								<div class="12u">
+									facebook: <font id="persona_facebook">paospdomamasd@dkfnaspomsa</font>
+								</div>
+								<div class="12u">
+									linkedin: <font id="persona_linkedin">paospdomamasd@dkfnaspomsa</font>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
 
+
+      </div>
+    </div>
 		<!-- Header -->
 			<section id="header">
 				<header>
@@ -114,28 +144,10 @@
 										@else
 											<li class="fa-user">
 										@endif
-										<a href="{{$persona->email}}">{{$persona->nombre}} {{$persona->apellido}}</a></li>
+										<a href="#!" onclick="openModal('{{$persona->id}}')">{{$persona->nombre}} {{$persona->apellido}}</a></li>
 										@endforeach
 									<ul>
 
-									<!--
-									<p>Profesionales</p>
-									<ul class="feature-icons">
-										<li class="fa-user">Carlos Chong</li>
-										<li class="fa-user">Leo </li>
-										<li><img src="images/lbifano.png" class="staff"/><a href="http://www.bifano.com.ar">Lautaro Bifano</a></li>
-										<li class="fa-user">Valeria Lasagna</li>
-										<li class="fa-user">Dario Cacavale</li>
-										<li class="fa-user">Romina Itsvan</li>
-									</ul>
-									<p>Alumnos</p>
-									<ul class="feature-icons">
-										<li class="fa-user">Alumno Uno</li>
-										<li class="fa-user">Alumno 2</li>
-										<li class="fa-user">Alumno 3</li>
-										<li class="fa-user">Alumno Cuatro</li>
-									</ul>
-								-->
 								</div>
 							</section>
 
@@ -661,6 +673,31 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+			var modal = document.getElementById("myModal");
+		  var span = document.getElementsByClassName("close_modal")[0];
+		  span.onclick = function() {
+		      modal.style.display = "none";
+		  }
+		  window.onclick = function(event) {
+		      if (event.target == modal) {
+		          modal.style.display = "none";
+		      }
+		  }
+			function openModal(id_persona) {
+				$.ajax({
+					url: '{{ url('/staff') }}/'+id_persona
+				}).done(function(persona) {
+					console.log(persona);
+					$('#persona_imagen').prop('src','{{ url('/') }}'+persona.foto);
+					$('#persona_mail').html(persona.email);
+					$('#persona_facebook').html(persona.facebook);
+					$('#persona_nombre').html(persona.nombre+' '+persona.apellido);
+				});
+				modal.style.display = "block";
+			}
+
+			</script>
 
 	</body>
 </html>
