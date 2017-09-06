@@ -1,3 +1,4 @@
+<h1>Deployar automaticamente</h1>
 <h3>En el server:</h3>
 cd /opt<br>
 git init --bare lines_page.git<br>
