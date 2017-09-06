@@ -695,9 +695,15 @@
 					console.log(persona);
 					$('#persona_imagen').prop('src','{{ url('/') }}'+persona.foto);
 					$('#persona_mail').attr('href', 'mailto:'+persona.email).text(persona.email);
-					$('#persona_facebook').attr('href',persona.facebook).text(persona.facebook);
+					if(persona.facebook)
+						$('#persona_facebook').attr('href',persona.facebook).text(persona.facebook).css('display','block');
+					else
+						$('#persona_facebook').css('display','none');
 					$('#persona_nombre').html(persona.nombre+' '+persona.apellido);
-					$('#persona_linkedin').attr('href',persona.linkedin).text(persona.linkedin);
+					if(persona.linkedin)
+						$('#persona_linkedin').attr('href',persona.linkedin).text(persona.linkedin).css('display','block');
+					else
+						$('#persona_linkedin').css('display','none');
 					$('#persona_curriculum').html(persona.curriculum);
 				});
 				modal.style.display = "block";
