@@ -61,13 +61,13 @@
 									<b id="persona_curriculum"></b>
 								</div>
 								<div class="12u">
-									mail: <a id="persona_mail"></a>
+									mail: <a target="_blank" id="persona_mail"></a>
 								</div>
 								<div class="12u">
-									facebook: <a id="persona_facebook"></a>
+									facebook: <a target="_blank" id="persona_facebook"></a>
 								</div>
 								<div class="12u">
-									linkedin: <a id="persona_linkedin"></a>
+									linkedin: <a target="_blank" id="persona_linkedin"></a>
 								</div>
 
 							</div>
