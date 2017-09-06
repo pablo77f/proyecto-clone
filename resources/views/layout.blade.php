@@ -58,14 +58,18 @@
 						<div class="9u">
 							<div class="row">
 								<div class="12u">
-									mail: <font id="persona_mail">paospdomamasd@dkfnaspomsa</font>
+									<b id="persona_curriculum"></b>
 								</div>
 								<div class="12u">
-									facebook: <font id="persona_facebook">paospdomamasd@dkfnaspomsa</font>
+									mail: <a id="persona_mail"></a>
 								</div>
 								<div class="12u">
-									linkedin: <font id="persona_linkedin">paospdomamasd@dkfnaspomsa</font>
+									facebook: <a id="persona_facebook"></a>
 								</div>
+								<div class="12u">
+									linkedin: <a id="persona_linkedin"></a>
+								</div>
+
 							</div>
 						</div>
 					</div>
@@ -690,9 +694,11 @@
 				}).done(function(persona) {
 					console.log(persona);
 					$('#persona_imagen').prop('src','{{ url('/') }}'+persona.foto);
-					$('#persona_mail').html(persona.email);
-					$('#persona_facebook').html(persona.facebook);
+					$('#persona_mail').attr('href', 'mailto:'+persona.email).text(persona.email);
+					$('#persona_facebook').attr('href',persona.facebook).text(persona.facebook);
 					$('#persona_nombre').html(persona.nombre+' '+persona.apellido);
+					$('#persona_linkedin').attr('href',persona.linkedin).text(persona.linkedin);
+					$('#persona_curriculum').html(persona.curriculum);
 				});
 				modal.style.display = "block";
 			}

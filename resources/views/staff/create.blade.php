@@ -9,28 +9,34 @@
 
   <div class="row uniform">
     <div class="6u 12u(xsmall)">
-      <input type="text" name="nombre" id="nombre" value="" placeholder="Nombre" />
+      <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}" placeholder="Nombre" />
     </div>
     <div class="6u 12u(xsmall)">
-      <input type="text" name="apellido" id="apellido" value="" placeholder="Apellido" />
+      <input type="text" name="apellido" id="apellido" value="{{ old('apellido') }}" placeholder="Apellido" />
     </div>
   </div>
   <div class="row uniform">
     <div class="12u">
-      <input type="email" name="email" id="email" value="" placeholder="Email" />
+      <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email" />
     </div>
   </div>
   <div class="row uniform">
     <div class="6u 12u(xsmall)">
-      <input type="text" name="facebook" id="facebook" value="" placeholder="Facebook" />
+      <input type="text" name="facebook" id="facebook" value="{{ old('facebook') }}" placeholder="Facebook" />
     </div>
     <div class="6u 12u(xsmall)">
-      <input type="text" name="linkedin" id="linkedin" value="" placeholder="Linkedin" />
+      <input type="text" name="linkedin" id="linkedin" value="{{ old('linkedin') }}" placeholder="Linkedin" />
+    </div>
+  </div>
+  <div class="row uniform">
+    <div class="12u 12u(xsmall)">
+      <textarea name="curriculum" id="curriculum" >{{ old('curriculum') }}
+      </textarea>
     </div>
   </div>
   <div class="row uniform">
     <div class="6u 12u(xsmall)">
-      <input type="file" name="foto" id="foto" value="" />
+      <input type="file" name="foto" id="foto" value="{{ old('foto') }}" />
     </div>
 
   </div>

@@ -29,6 +29,12 @@
     </div>
   </div>
   <div class="row uniform">
+    <div class="12u 12u(xsmall)">
+      <textarea name="curriculum" id="curriculum" >{{$persona->curriculum}}
+      </textarea>
+    </div>
+  </div>
+  <div class="row uniform">
     <div class="6u 12u(xsmall)">
       <input type="file" name="foto" id="foto"/>
     </div>
