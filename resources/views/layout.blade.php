@@ -60,13 +60,13 @@
 								<div class="12u">
 									<b id="persona_curriculum"></b>
 								</div>
-								<div class="12u">
+								<div class="12u" id="div_mail">
 									mail: <a target="_blank" id="persona_mail"></a>
 								</div>
-								<div class="12u">
+								<div class="12u" id="div_facebook">
 									facebook: <a target="_blank" id="persona_facebook"></a>
 								</div>
-								<div class="12u">
+								<div class="12u" id="div_linkedin">
 									linkedin: <a target="_blank" id="persona_linkedin"></a>
 								</div>
 
@@ -695,15 +695,19 @@
 					console.log(persona);
 					$('#persona_imagen').prop('src','{{ url('/') }}'+persona.foto);
 					$('#persona_mail').attr('href', 'mailto:'+persona.email).text(persona.email);
-					if(persona.facebook)
-						$('#persona_facebook').attr('href',persona.facebook).text(persona.facebook).css('display','block');
+					if(persona.facebook) {
+						$('#persona_facebook').attr('href',persona.facebook).text(persona.facebook);
+						$('#div_facebook').css('display','block')
+					}
 					else
-						$('#persona_facebook').css('display','none');
+						$('#div_facebook').css('display','none');
 					$('#persona_nombre').html(persona.nombre+' '+persona.apellido);
-					if(persona.linkedin)
-						$('#persona_linkedin').attr('href',persona.linkedin).text(persona.linkedin).css('display','block');
+					if(persona.linkedin) {
+						$('#persona_linkedin').attr('href',persona.linkedin).text(persona.linkedin);
+						$('#div_linkedin').css('display','block');
+					}
 					else
-						$('#persona_linkedin').css('display','none');
+						$('#div_linkedin').css('display','none');
 					$('#persona_curriculum').html(persona.curriculum);
 				});
 				modal.style.display = "block";
